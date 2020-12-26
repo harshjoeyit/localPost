@@ -18,7 +18,7 @@ function PostDetails() {
             })
         }
         getPostData()
-    })
+    }, [])
 
     return (
         <>  

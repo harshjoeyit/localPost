@@ -19,6 +19,9 @@ function Header() {
                         <Link to="/posts">
                             <span>Posts</span>
                         </Link>
+                        <Link to="/create-new-post">
+                            <span>Create</span>
+                        </Link>
                         <Link to="/logout">
                             <span>Logout</span>
                         </Link>

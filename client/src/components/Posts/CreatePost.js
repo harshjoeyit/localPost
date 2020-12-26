@@ -70,7 +70,9 @@ const CreatePost = () => {
         <Header />
         <div className="form-container">
             
-            <form onSubmit={ handleSubmit }>
+            <form
+                style={{width:'700px'}} 
+                onSubmit={ handleSubmit } >
                 <h1>What's on your mind?</h1>
                 {
                     (error.length > 0) 
@@ -79,6 +81,7 @@ const CreatePost = () => {
                 }
                 <div className="input-container"> 
                     <input
+                        style={{width:'100%'}} 
                         type='text'
                         name='title'
                         required
@@ -88,12 +91,12 @@ const CreatePost = () => {
                 </div>
                 <div className="input-container"> 
                     <textarea
+                        style={{width:'100%', resize:'none'}} 
                         rows='10'
                         name='content'
                         required
                         placeholder='Description'
                         onChange={ handleChange }
-                        style={{ resize: 'none' }}
                     />
                 </div>
                 <div className="form-btn-container">

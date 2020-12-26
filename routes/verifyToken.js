@@ -10,6 +10,7 @@ const verify = (req, res, next) => {
     }
     
     try { 
+        console.log(token)
         const authenticated_user = jwt.verify(token, process.env.TOKEN_SECRET, (err, decoded) => {
             if(err) {
                 console.log(err, 'Probably token expired os somwthing!')

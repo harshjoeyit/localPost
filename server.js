@@ -14,7 +14,7 @@ dotenv.config();
 
 // Connect to db
 mongoose.set('debug', true)
-mongoose.connect('mongodb://localhost/todo-api', { 
+mongoose.connect(process.env.DB_CONNECT, { 
     useNewUrlParser: true, 
     useUnifiedTopology: true, 
     useFindAndModify: false 
