@@ -1,0 +1,75 @@
+
+.form-container {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-direction: column;
+}
+
+.form-container h1 {
+      text-align: center;
+      margin: 20px 0;
+      padding: 10px;
+      color: var(--orange);
+}
+
+form {
+    padding: 20px;
+    margin: 120px auto;
+    border-radius: 5px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.048),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.055),
+    0 100px 80px rgba(0, 0, 0, 0.068);
+}
+
+.extralink {
+    margin: auto;
+}
+
+input, textarea {
+    width: 400px;
+    font-size: 15px;
+    padding: 12px 15px;
+    margin: 5px 0;
+    outline: none;
+    border-radius: 3px;
+    border: none;
+    border-radius: 3px;
+    color: var(--pink);
+}
+
+.form-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+form button {
+    outline: none;
+    font-size: 15px;
+    padding: 8px 15px;  
+    border: none;
+    border-radius: 3px;
+    margin: 3px;
+    background-color: var(--pink);
+    color: white;
+    transition: all ease-in 0.2s;
+}
+
+form button:hover {
+    cursor: pointer;
+    background-color: var(--orange);
+}
+
+.error {
+    text-align: center;
+    padding: 5px;
+    border-radius: 3px;
+    color: rgb(226, 28, 28);
+    background-color: rgb(240, 193, 193);
+}

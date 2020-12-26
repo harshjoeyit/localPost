@@ -1,0 +1,44 @@
+
+.postlist-container {
+    width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.postlist-container h1 {
+    text-align: center;
+    background-image: linear-gradient(45deg, var(--orange), var(--pink));
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+.post-container {
+    margin: 40px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06);
+    color: black !important;
+    background-color: rgb(250, 243, 243) !important;
+}
+
+.post-container h3 {
+    color: rgb(80, 80, 80);
+    font-size: 25px;
+    margin: 0 0 15px 0;
+}
+
+.post-container p {
+    color: rgb(110, 110, 110);
+}
+
+.post-container h4 {
+    margin-top: 15px;
+    text-align: right;
+    color: var(--pink);
+}

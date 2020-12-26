@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('//fonts.googleapis.com/css?family=Cookie');
+
+:root {
+    --bg-color: #f5efef;
+    --orange: #f37521;
+    --pink: #ff4f6c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    background: var(--bg-color);
+}
+a {
+    text-decoration: none;
+    color: var(--bg-color)
+}
+a:hover {
+    text-decoration: none;
+    color: #e6dede;
+}
+a:active {
+    color: rgb(78, 78, 78);
+}
+
+/* Home page - App.js */
+.container {
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    height: 90vh;
+}
+
+.hero-text {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.hero-text h1 {
+    font-size: 80px;
+    text-align: center;
+    background-image: linear-gradient(45deg, var(--orange), var(--pink));
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+.hero-image {
+    width: 50%;
+}
+
+.hero-image img {
+    margin-top: 100px;
+    width: 600px;
+    height: 500px;
+    border-radius: 5px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.048),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.055),
+    0 100px 80px rgba(0, 0, 0, 0.068);
+}
+
+.loading {
+    text-align: center;
+    margin-top: 20px;
+}
