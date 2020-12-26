@@ -2,13 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const keys = require('./config/keys');
+const path = require('path');
 
 // import routes 
 const authRoute = require('./routes/auth');
 const postRoute = require('./routes/post');
 
 const app = express();
-const port = process.env.port || 5000;
 
 
 // Connect to db
@@ -34,11 +34,18 @@ app.use('/api/user', authRoute)
 app.use('/api/posts', postRoute)
 
 
-// home 
-app.get('/', (req, res) => {
-    res.send('Hello from Home')
-})
+// Serve static assets if in production 
+if(process.env.NODE_ENV === 'production') {
+    // Set static folder
+    app.use(express.static('client/build'));
 
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    })
+}
+
+// port 
+const port = process.env.port || 5000;
 
 // listenting
 app.listen(port, () => console.log('server running'))
