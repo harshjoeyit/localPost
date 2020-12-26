@@ -44,12 +44,10 @@ const CreatePost = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(postData)
 
         axiosInstance
             .post(`/posts`, postData)
             .then(res => {
-                console.log(res.data._id)
                 setError('')
                 setTimeout(() => {
                     history.push(`../posts/${res.data._id}`)
@@ -61,7 +59,7 @@ const CreatePost = () => {
     }
 
     const handleCancel = () => {
-        const res = window.confirm('Are you sure!')
+        const res = window.confirm('Do you want to cancel the post!')
         if(res) history.goBack();
     }
 

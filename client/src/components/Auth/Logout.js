@@ -11,8 +11,6 @@ const Logout = () => {
 		history.goBack();	
 		return <></>;
     }
-    // todo:
-    // send a request to backend
     
     localStorage.removeItem('auth_token')
     history.push('/login');

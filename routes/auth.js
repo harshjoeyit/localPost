@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const User = require('../models/User');
 const { registerValidation, loginValidation } = require('../validations/userValidations');
-
+const keys = require('../config/keys')
 
 // REGISTER 
 
@@ -69,7 +69,7 @@ router.post("/login", async (req, res) => {
 
     // Create and assign token
 
-    const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
+    const token = jwt.sign({ _id: user._id }, keys.TOKEN_SECRET);
     res.header('auth-token', token).send({ token: token })
 })
 

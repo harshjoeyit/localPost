@@ -24,17 +24,19 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData)
         
         if(formData.email === "" || formData.password==="") {
             setError('Fill the form completely')
             return;
         }
-
+        
+        // since we are using a proxy server set in client dependencies
+        // we dont need to write
+        // http://localhost:5000/...
+        // axios will automatically know where to go
         axios
-            .post(`http://localhost:9000/api/user/login`, formData)
+            .post(`api/user/login`, formData)
             .then(res => {
-                console.log(res.data)
                 setError('')
                 localStorage.setItem('auth_token', res.data.token)
                 setTimeout(() => {
@@ -44,7 +46,6 @@ function Login() {
             .catch(err => {
                 const data = err.response.data;
                 const error = data.message ? data.message : data.error
-                console.log(error)
                 setError(error)
             })
     }

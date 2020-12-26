@@ -25,9 +25,13 @@ const Register = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData)
-
+        
+        // since we are using a proxy server set in client dependencies
+        // we dont need to write
+        // http://localhost:5000/...
+        // axios will automatically know where to go
         axios
-            .post(`http://localhost:9000/api/user/register`, formData)
+            .post(`api/user/register`, formData)
             .then(res => {
                 console.log(res.data)
                 setError('')

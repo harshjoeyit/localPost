@@ -1,20 +1,19 @@
 const express = require('express');
-const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const keys = require('./config/keys');
 
 // import routes 
 const authRoute = require('./routes/auth');
 const postRoute = require('./routes/post');
 
 const app = express();
-const port = 9000;
-dotenv.config();
+const port = process.env.port || 5000;
 
 
 // Connect to db
 mongoose.set('debug', true)
-mongoose.connect(process.env.DB_CONNECT, { 
+mongoose.connect(keys.DB_CONNECT, { 
     useNewUrlParser: true, 
     useUnifiedTopology: true, 
     useFindAndModify: false 

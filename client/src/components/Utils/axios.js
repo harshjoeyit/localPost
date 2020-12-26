@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseURL = "http://localhost:9000/api/";
+const baseURL = "http://localhost:5000/api/";
 
 const axiosInstance = axios.create({
 	baseURL: baseURL,
@@ -18,8 +18,7 @@ axiosInstance.interceptors.response.use(
 	async function (error) {
 		if (typeof error.response === 'undefined') {
 			console.log(
-				'A server/network error occurred. ' +
-				'Looks like CORS might be the problem. '
+				'A server/network error occurred. '
 			);
 			return Promise.reject(error);
 		}

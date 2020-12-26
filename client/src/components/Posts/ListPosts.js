@@ -17,7 +17,6 @@ const ListPosts = () => {
             const { latitude, longitude } = location;
 
             const res = await axiosInstance.get(`/posts?latitude=${latitude}&longitude=${longitude}`)
-            console.log(res.data)
             setState(prevState => ({
                 ...prevState,
                 posts: res.data,
