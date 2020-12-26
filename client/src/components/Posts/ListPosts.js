@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import axiosInstance from '../Utils/axios'
+import axios from 'axios';
 import { getLocation } from '../Utils/getLocation'
 import Header from '../Nav/Header'
 import './posts.css'
-
+import getHeaders from '../Utils/getHeaders'
 
 const ListPosts = () => {
 
@@ -15,8 +15,9 @@ const ListPosts = () => {
         const fetchPosts = async () => {
             const location = await getLocation()
             const { latitude, longitude } = location;
+            const headers = getHeaders();
 
-            const res = await axiosInstance.get(`/posts?latitude=${latitude}&longitude=${longitude}`)
+            const res = await axios.get(`api/posts?latitude=${latitude}&longitude=${longitude}`,  { headers: headers })
             setState(prevState => ({
                 ...prevState,
                 posts: res.data,
@@ -56,13 +57,11 @@ const ListPosts = () => {
 function ListPostItem({ id, title, content, city }) {
     // add link to other post detail 
     return (
-        <Link to={`../posts/${id}`}>
-            <div className="post-container">
-                <h3>{title}</h3>
-                <p>{content}</p>
-                <h4>{city}</h4>
-            </div>
-        </Link>
+        <div className="post-container">
+            <h3>{title}</h3>
+            <p>{content}</p>
+            <h4>{city}</h4>
+        </div>
     )
 }
 

@@ -9,7 +9,6 @@ import Register from './components/Auth/Register'
 import Login from './components/Auth/Login'
 import Logout from './components/Auth/Logout'
 import PostList from './components/Posts/ListPosts'
-import PostDetails from './components/Posts/PostDetails'
 import CreatePost from './components/Posts/CreatePost'
 import App from './App'
 import NotFound from './components/Error/NotFound'
@@ -39,11 +38,6 @@ const routing = (
         exact
         path='/posts'
         component={PostList}
-      />
-      <PrivateRoute
-        exact
-        path='/posts/:id'
-        component={PostDetails}
       />
       <PrivateRoute
         exact

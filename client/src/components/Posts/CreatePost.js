@@ -1,9 +1,10 @@
 
 import React, { useEffect, useState } from 'react'
-import axiosInstance from '../Utils/axios'
+import axios from 'axios'
 import { getLocation } from '../Utils/getLocation'
 import Header from '../Nav/Header'
 import { useHistory } from 'react-router-dom'
+import getHeaders from '../Utils/getHeaders'
 
 
 const CreatePost = () => {
@@ -45,16 +46,18 @@ const CreatePost = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        axiosInstance
-            .post(`/posts`, postData)
+        const headers = getHeaders()
+
+        axios
+            .post(`api/posts`, postData, { headers: headers })
             .then(res => {
                 setError('')
                 setTimeout(() => {
-                    history.push(`../posts/${res.data._id}`)
+                    history.push(`../posts`)
                 }, 500) 
             })
             .catch(err => {
-                setError(err.data)
+                setError(err.response.data)
             })
     }
 
@@ -68,8 +71,7 @@ const CreatePost = () => {
         <Header />
         <div className="form-container">
             
-            <form
-                style={{width:'700px'}} 
+            <form 
                 onSubmit={ handleSubmit } >
                 <h1>What's on your mind?</h1>
                 {
@@ -89,7 +91,6 @@ const CreatePost = () => {
                 </div>
                 <div className="input-container"> 
                     <textarea
-                        style={{width:'100%', resize:'none'}} 
                         rows='10'
                         name='content'
                         required

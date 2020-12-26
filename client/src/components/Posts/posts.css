@@ -42,3 +42,22 @@
     text-align: right;
     color: var(--pink);
 }
+
+@media only screen and (max-width: 900px) {
+    .postlist-container {
+        width: 500px;
+        margin-top: 20px;
+    }
+    .post-container {
+        margin: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .postlist-container {
+        width: 100%;
+    }   
+    .post-container {
+        margin: 10px 5px;
+    }
+}

@@ -1,7 +1,7 @@
 
 .topnav-container {
     background: linear-gradient(45deg, var(--orange), var(--pink));
-    padding: 0 150px;
+    padding: 0 80px;
     display: flex;
     justify-content: space-between;
     align-content: center;
@@ -32,4 +32,14 @@
 }
 .navlink span {
     margin: 0 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .topnav-container {
+        padding: 0 10px;
+    }
+    .navlink span {
+        margin: 0 8px;
+        font-size: 16px !important;
+    }
 }

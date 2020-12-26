@@ -9,8 +9,11 @@ const App = () => {
       <Header />
       <div className="container">
         <div className="hero-text">
-          <h1>It's What</h1>
-          <h1>is happening</h1>
+          <div>
+            <h1>It's</h1>
+            <h1>What</h1>
+            <h1>is happening</h1>
+          </div>
         </div>
         <div className="hero-image">
           <img src={postImage} alt="post" />
