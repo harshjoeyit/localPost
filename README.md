@@ -1,1 +1,1 @@
-### localPost - See posts sorted by your location
+### localPost - Create, Watch posts sorted by your location
