@@ -12,7 +12,7 @@ const app = express();
 
 
 // Connect to db
-mongoose.set('debug', true)
+mongoose.set('debug', false)
 mongoose.connect(keys.DB_CONNECT, { 
     useNewUrlParser: true, 
     useUnifiedTopology: true, 
@@ -45,7 +45,7 @@ if(process.env.NODE_ENV === 'production') {
 }
 
 // port 
-const port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 
 // listenting
 app.listen(port, () => console.log('server running'))
