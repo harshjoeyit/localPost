@@ -15,7 +15,7 @@ const CreatePost = () => {
         content: null,
         latitude: null,
         longitude: null,
-        city: null
+        city: '...'
     }
 
     const [postData, setPostData] = useState(initPostData)
@@ -29,7 +29,7 @@ const CreatePost = () => {
                     ...prevState,
                     latitude: data.latitude,
                     longitude: data.longitude,
-                    city: (data.city) ? data.city: 'Kanpur'
+                    city: (data.city) ? data.city: 'Unavailable'
                 }))
             })
             .catch(err => console.log(err))
@@ -73,7 +73,13 @@ const CreatePost = () => {
             
             <form 
                 onSubmit={ handleSubmit } >
-                <h1>What's on your mind?</h1>
+                <div className="post-header" style={{flexDirection: 'column'}}>
+                    <h1>What's on you mind?</h1>
+                    <p className="city">
+                        <i className="fa fa-map-marker" aria-hidden="true"></i> 
+                        { postData.city }
+                    </p> 
+                </div>
                 {
                     (error.length > 0) 
                     ? <div className="error">{ error }</div> 

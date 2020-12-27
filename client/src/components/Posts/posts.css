@@ -43,6 +43,28 @@
     color: var(--pink);
 }
 
+.post-header {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.post-header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.fa-map-marker {
+    color: green !important;
+    padding: 0 2px;
+}
+
+.city {
+    color: grey;
+    padding: 10px 10px;
+    text-align: center;
+}
+
 @media only screen and (max-width: 900px) {
     .postlist-container {
         width: 500px;

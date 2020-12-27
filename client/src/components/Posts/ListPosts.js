@@ -8,19 +8,20 @@ import getHeaders from '../Utils/getHeaders'
 
 const ListPosts = () => {
 
-    const [state, setState] = useState({ posts: [], loading: true })
+    const [state, setState] = useState({ posts: [], city:'...', loading: true })
 
     useEffect(() => {
 
         const fetchPosts = async () => {
             const location = await getLocation()
-            const { latitude, longitude } = location;
+            const { latitude, longitude, city } = location;
             const headers = getHeaders();
 
             const res = await axios.get(`api/posts?latitude=${latitude}&longitude=${longitude}`,  { headers: headers })
             setState(prevState => ({
                 ...prevState,
                 posts: res.data,
+                city: city,
                 loading: false
             }))
         }
@@ -32,7 +33,10 @@ const ListPosts = () => {
         <>
         <Header />
         <div className="postlist-container">
-            <h1>Recent Posts</h1>
+            <div className="post-header">
+                <h1>Recent Posts</h1>
+                <p className="city"><i className="fa fa-map-marker" aria-hidden="true"></i> { state.city }</p> 
+            </div>
             {
                 (state.loading) 
                 ? <h3 className='loading'>Loading ...</h3>
